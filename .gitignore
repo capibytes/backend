@@ -56,3 +56,8 @@ Thumbs.db
 *.pid
 *.seed
 *.pid.lock
+*.class
+*.pyc
+*.swp
+.history
+.vscode/
