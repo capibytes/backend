@@ -1,0 +1,58 @@
+# Arquivos java compilados
+*.class
+
+# Arquivos de package
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# Dependências Maven
+target/
+
+# Arquivos Graddle
+.gradle/
+build/
+gradlew
+gradlew.bat
+gradle-wrapper.jar
+gradle-wrapper.properties
+
+# Arquivos Terraform
+*.tfstate
+*.tfstate.*.backup
+*.tfstate.backup
+*.tfvars
+
+# Arquivos IDEA
+*.iml
+.idea/
+*.iws
+
+# Arquivos IDE Eclipse
+*.project
+*.classpath
+*.settings/
+
+# Arquivos temp
+*.log
+*.tmp
+*.bak
+*.swp
+*~.nib
+
+# Arquivos gerados pelo OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Outros
+*.pid
+*.seed
+*.pid.lock
