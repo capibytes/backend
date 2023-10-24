@@ -5,8 +5,8 @@ resource "aws_db_instance" "cpb_rds" {
   engine_version       = "15.4"
   instance_class       = "db.t2.micro"
   db_name              = local.app_name
-  username             = 
-  password             = 
+  username             = var.db_username
+  password             = var.db_password
   skip_final_snapshot  = true
 
   # Open to external connections (not recommended for production)
@@ -22,7 +22,7 @@ resource "aws_db_instance" "cpb_rds" {
 }
 
 resource "aws_security_group" "rds_sg" {
-  name        = "Capibytes_RDS_SG"
+  name        = "capibytes_rds_sg"
   description = "Allow all inbound traffic to PostgreSQL"
   vpc_id      = aws_vpc.cpb_vpc.id
 
@@ -35,7 +35,7 @@ resource "aws_security_group" "rds_sg" {
 }
 
 resource "aws_db_subnet_group" "rds_subnet_group" {
-  name       = "CapiBytes_RDS_subnet_group"
+  name       = "capibytes_rds_subnet_group"
   subnet_ids = [aws_subnet.cpb_subnet.id]
 
   tags = {

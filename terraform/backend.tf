@@ -1,9 +1,9 @@
 terraform {
-  backend "remote" {
-    organization = ""
+  cloud {
+    organization = "capibytes"
 
     workspaces {
-      name = ""
+      name = "datalytics-backend"
     }
   }
 }
