@@ -27,5 +27,5 @@ O "Datalytics" é uma plataforma voltada para consultoria em governança de dado
 - O consultor somente ficará disponível na lista quando for aprovado no teste.
 ---
 
-### Conclsusão: 
+### Conclusão: 
 O sistema "Datalytics" busca ser uma ponte eficiente entre empresas que precisam de consultoria em governança de dados e consultores qualificados. Através de robustos mecanismos de gestão, busca e segurança, o sistema assegura um funcionamento otimizado e seguro para todas as partes envolvidas.
