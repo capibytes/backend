@@ -1,23 +1,31 @@
+## Prototipação Datalytics :
+O "Datalytics" é uma plataforma voltada para consultoria em governança de dados. Este projeto visa conectar empresas e consultores especializados de maneira prática e objetiva.
 
-## **Nomenclatura de branchs**
+## Introdução:
+ Datalytics visa conectar empresas que necessitam de consultoria em governança de dados com consultores qualificados na área. Além disso, o sistema possui mecanismos robustos para gerenciar usuários, consultores, interações entre eles e segurança dos dados.
 
-A nomenclatura das branchs devem seguir o seguinte padrão (sempre letras minúsculas):
+---
 
-> <code>tipo/breve-descrição-da-branch </code>
+## 1. Requisitos Funcionais
 
-Os tipos podem ser:
+- **Usuários:** Operações de CRUD.
+- **Consultores:** Operações de CRUD.
+- **Formulários:** Formulários específicos para consultores e empresas.
+- **Metadados:** Possibilidade de inserir metadados.
+- **Autenticação:** Área dedicada para login e cadastro.
 
-👉 **feature**: Quando é algo novo
 
-👉 **fix**: Quando é uma melhoria de uma funcionalidade, porém não é um bug
+---
+## 2. Requisitos Não Funcionais
 
-👉 **bug**: Ajuste de um bug
+- **Segurança:** Criptografia de dados armazenados.
+- **Busca:** Empresas podem localizar e selecionar consultores.
 
-Exemplos:
-> <code>feature/login</code>
+### Regras de negócios:
+- O consultores só devem ter acesso a informação da empresa quando a empresa solicitar ou entra o contato para liberar o acesso.
 
-> <code>fix/ordem-menu-lateral</code>
+- O consultor somente ficará disponível na lista quando for aprovado no teste.
+---
 
-> <code>bug/acesso-chat</code>
-
-</br>
+### Conclusão: 
+O sistema "Datalytics" busca ser uma ponte eficiente entre empresas que precisam de consultoria em governança de dados e consultores qualificados. Através de robustos mecanismos de gestão, busca e segurança, o sistema assegura um funcionamento otimizado e seguro para todas as partes envolvidas.
