@@ -36,7 +36,7 @@ resource "aws_security_group" "rds_sg" {
 
 resource "aws_db_subnet_group" "rds_subnet_group" {
   name       = "capibytes_rds_subnet_group"
-  subnet_ids = [aws_subnet.cpb_subnet.id]
+  subnet_ids = [aws_subnet.cpb_subnet1.id, aws_subnet.cpb_subnet2.id]
 
   tags = {
     Env = "dev"
