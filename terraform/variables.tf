@@ -11,11 +11,11 @@ variable "db_password" {
 }
 
 variable "TFC_AWS_PROVIDER_AUTH" {
-  
+  description = "Config para usar OIDC para se autenticar com AWS"
 }
 
 variable "TFC_AWS_RUN_ROLE_ARN" {
-    
+  description = "ARN da role de acesso AWS"
 }
 
 locals {
