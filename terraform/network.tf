@@ -23,8 +23,6 @@ resource "aws_subnet" "cpb_subnet2" {
   }
 } 
 
-///////
-
 resource "aws_internet_gateway" "cpb_igw" {
   vpc_id = aws_vpc.cpb_vpc.id
 
