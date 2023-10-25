@@ -22,3 +22,36 @@ resource "aws_subnet" "cpb_subnet2" {
     Name = "capibytes_subnet2"
   }
 } 
+
+///////
+
+resource "aws_internet_gateway" "cpb_igw" {
+  vpc_id = aws_vpc.cpb_vpc.id
+
+  tags = {
+    Name = "capibytes_igw"
+  }
+}
+
+resource "aws_route_table" "rt" {
+  vpc_id = aws_vpc.cpb_vpc.id
+
+  route {
+    cidr_block = "0.0.0.0/0"
+    gateway_id = aws_internet_gateway.cbp_igw.id
+  }
+
+  tags = {
+    Name = "route table"
+  }
+}
+
+resource "aws_route_table_association" "rt1" {
+  subnet_id      = aws_subnet.cpb_subnet1.id
+  route_table_id = aws_route_table.rt.id
+}
+
+resource "aws_route_table_association" "rt2" {
+  subnet_id      = aws_subnet.cpb_subnet2.id
+  route_table_id = aws_route_table.rt.id
+}
