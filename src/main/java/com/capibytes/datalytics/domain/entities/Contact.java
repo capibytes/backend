@@ -8,8 +8,6 @@ import java.io.Serializable;
 import java.time.LocalDate;
 
 public class Contact implements Serializable {
-    @Serial
-    private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
