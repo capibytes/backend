@@ -1,7 +1,7 @@
 resource "aws_security_group" "ec2_sg" {
   name        = "capibytes_ec2_sg"
   description = "Security group for EC2 instance"
-  vpc_id      = aws_vpc1.cpb_vpc.id
+  vpc_id      = aws_vpc.cpb_vpc.id
 
   ingress {
     from_port   = 22
