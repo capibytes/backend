@@ -2,10 +2,12 @@ package com.capibytes.datalytics.dto;
 
 import lombok.*;
 
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
-@Builder
-public class FormResponseDto {
+import java.io.Serial;
+import java.io.Serializable;
+
+@Data
+public class FormResponseDto implements Serializable {
+
+    @Serial
+    private static final long serialVersionUID = 1L;
 }
