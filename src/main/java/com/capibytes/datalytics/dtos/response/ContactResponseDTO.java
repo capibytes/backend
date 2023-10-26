@@ -1,12 +1,12 @@
-package com.capibytes.datalytics.dto;
+package com.capibytes.datalytics.dtos.response;
 
-import lombok.*;
+import lombok.Data;
 
 import java.io.Serial;
 import java.io.Serializable;
 
 @Data
-public class FormResponseDto implements Serializable {
+public class ContactResponseDTO implements Serializable {
 
     @Serial
     private static final long serialVersionUID = 1L;
