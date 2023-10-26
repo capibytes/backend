@@ -23,10 +23,11 @@ public class Contact implements Serializable {
     private LocalDate dataContact;
 
     @ManyToOne
-    @JoinColumn(name = "consultant-id")
+    @JoinColumn(name = "consultant_id")
     private  Consultant consultant;
 
     @ManyToOne
     @JoinColumn(name = "customer_id")
     private Customer customer;
+
 }
