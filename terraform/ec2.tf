@@ -39,7 +39,7 @@ resource "aws_security_group" "ec2_sg" {
 
 resource "aws_instance" "cpb_ec2" {
   ami           = local.ami_ubuntu  # Ubuntu 22.04
-  instance_type = "t3.mediun"
+  instance_type = "t3.medium"
 
   key_name               = "capibytes-cecilia"  # Specify your key pair name if you have one
   vpc_security_group_ids = [aws_security_group.ec2_sg.id]
