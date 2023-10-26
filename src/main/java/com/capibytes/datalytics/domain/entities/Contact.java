@@ -3,11 +3,9 @@ package com.capibytes.datalytics.domain.entities;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 
-import java.io.Serial;
-import java.io.Serializable;
 import java.time.LocalDate;
 
-public class Contact implements Serializable {
+public class Contact{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
