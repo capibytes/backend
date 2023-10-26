@@ -16,7 +16,7 @@ resource "aws_db_instance" "cpb_rds" {
   db_subnet_group_name   = aws_db_subnet_group.rds_subnet_group.name
 
   tags = {
-    Env = "dev"
+    Env = local.env
     Equipe = local.team_name
   }
 }
@@ -32,6 +32,13 @@ resource "aws_security_group" "rds_sg" {
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"] # Allows connection from anywhere
   }
+
+  ingress {
+    from_port   = 5432
+    to_port     = 5432
+    protocol    = "tcp"
+    security_groups = [aws_security_group.ec2_sg.id]
+  }
 }
 
 resource "aws_db_subnet_group" "rds_subnet_group" {
@@ -39,7 +46,7 @@ resource "aws_db_subnet_group" "rds_subnet_group" {
   subnet_ids = [aws_subnet.cpb_subnet1.id, aws_subnet.cpb_subnet2.id]
 
   tags = {
-    Env = "dev"
+    Env = local.env
     Equipe = local.team_name
   }
 }

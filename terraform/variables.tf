@@ -22,4 +22,6 @@ locals {
   region = "us-east-1"
   app_name = "datalytics"
   team_name = "CapiBytes"
-}
+  env = "dev"
+  ami_ubuntu = "ami-0fc5d935ebf8bc3bc"
+  }
