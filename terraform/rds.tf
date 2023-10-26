@@ -8,6 +8,7 @@ resource "aws_db_instance" "cpb_rds" {
   username             = var.db_username
   password             = var.db_password
   skip_final_snapshot  = true
+  identifier = "capibytes-db"
 
   # Open to external connections (not recommended for production)
   publicly_accessible = true
@@ -18,7 +19,7 @@ resource "aws_db_instance" "cpb_rds" {
   tags = {
     Env = local.env
     Equipe = local.team_name
-    Name = "capibytes_db"
+    Name = "capibytes-db"
   }
 }
 
