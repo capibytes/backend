@@ -15,8 +15,6 @@ import java.util.ArrayList;
 @Entity
 public class Customer extends Person{
 
-    @JsonIgnore
-    @OneToMany(mappedBy = "customer")
-    private List<Contact> tickets = new ArrayList<>();
+
 
 }
