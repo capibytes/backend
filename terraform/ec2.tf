@@ -48,5 +48,6 @@ resource "aws_instance" "cpb_ec2" {
   tags = {
     Env = local.env
     Equipe = local.team_name
+    Name = "capibytes_ec2"
   }
 }
