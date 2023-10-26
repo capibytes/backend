@@ -18,6 +18,7 @@ resource "aws_db_instance" "cpb_rds" {
   tags = {
     Env = local.env
     Equipe = local.team_name
+    Name = "capibytes_db"
   }
 }
 
