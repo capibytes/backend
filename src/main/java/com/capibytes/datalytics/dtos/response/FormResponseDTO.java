@@ -10,4 +10,8 @@ public class FormResponseDTO implements Serializable {
 
     @Serial
     private static final long serialVersionUID = 1L;
+
+    private Long id;
+    private String title;
+    private String description;
 }
