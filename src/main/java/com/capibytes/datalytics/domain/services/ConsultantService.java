@@ -37,24 +37,4 @@ public class ConsultantService {
         return consultantRepository.findById(id);
     }
 
-    public Consultant update(Long id, @Valid Consultant request){
-        Consultant consultant = consultantRepository.findById(id).orElseThrow(() -> new DataIntegrityViolationException("Consultor não existe"));
-
-        consultant.setEspecializacao(request.getEspecializacao());
-        //consultant.setContacts(request.getContacts()); retirar uma dúvida, para os contatos precisa ser atualizado?
-        consultant.setLinks(request.getLinks());
-        consultant.setSobre(request.getSobre());
-        consultant.setCpf(request.getCpf());
-        consultant.setEmail(request.getEmail());
-        consultant.setName(request.getName());
-        consultant.setProfiles(request.getProfiles());
-
-        return consultantRepository.save(consultant);
-    }
-
-    public Consultant creat(Long id, @Valid Consultant request){
-
-        return consultantRepository.save(request);
-    }
-
 }
