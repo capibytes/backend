@@ -27,7 +27,7 @@ public interface MapStructMapper {
 
     Consultant consultantToConsultantResponseDTO(ContactResponseDTO contactResponseDTO);
 
-    ConsultantRequestDTO consultantRequestDTOToConsultant(Consultant consultant);
+    ConsultantRequestDTO consultantRequestDTOToConsultant(ConsultantRequestDTO consultant);
 
     List<CustomerRequestDTO> customerRequestDTOAllToCustomer(Customer customer);
 
