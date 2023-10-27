@@ -27,12 +27,15 @@ jobs:
         uses: hashicorp/tfc-workflows-github/actions/upload-configuration@v1.0.0
         id: tf-upload
         with:
+          workspace: ${{ env.TF_WORKSPACE }}
+          directory: ${{ env.CONFIG_DIRECTORY }}
           speculative: true
 
       - name: plan run
         uses: hashicorp/tfc-workflows-github/actions/create-run@v1.0.0
         id: tf-plan
         with:
+          workspace: ${{ env.TF_WORKSPACE }}
           configuration_version: ${{ steps.tf-upload.outputs.configuration_version_id }}
           plan_only: true
 
