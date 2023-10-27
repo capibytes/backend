@@ -24,6 +24,5 @@ public class Consultant extends Person {
 
     private String especializacao;
     private String sobre;
-
     private Set<String> links = new HashSet<>();
 }

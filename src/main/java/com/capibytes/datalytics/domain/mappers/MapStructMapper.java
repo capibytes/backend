@@ -19,6 +19,7 @@ import java.util.List;
 @Mapper(componentModel = "Spring")
 public interface MapStructMapper {
 
+
     // Instancia para utlizar o MapStruct caso queira
     MapStructMapper INSTANCE = Mappers.getMapper(MapStructMapper.class);
 
