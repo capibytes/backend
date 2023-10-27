@@ -25,7 +25,7 @@ public class ConsultantController {
 
     @GetMapping
     @Operation(summary = "Listar todos os Consultores", description = "Recupera a lista de todos os consultores cadastrados.")
-    @ApiResponse(responseCode = "200", description = "Lista de construtores encontrada com sucesso")
+    @ApiResponse(responseCode = "200", description = "Lista de consultores encontrada com sucesso")
     public ResponseEntity<List<ConsultantRequestDTO>> findAll(){
         return new ResponseEntity<>(mapStructMapper.consultantRequestDTOAllToConsultant(consultantService.findAll()), HttpStatus.OK);
     }
