@@ -3,22 +3,58 @@ package com.capibytes.datalytics.domain.services;
 import com.capibytes.datalytics.domain.entities.Consultant;
 import com.capibytes.datalytics.repositories.ConsultantRepository;
 import jakarta.transaction.Transactional;
-import lombok.RequiredArgsConstructor;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ConsultantService {
 
     @Autowired
-    ConsultantRepository cosnultantRepository;
+    ConsultantRepository consultantRepository;
 
     @Transactional
     public List<Consultant> findAll() {
-        return cosnultantRepository.findAll();
+        return consultantRepository.findAll();
     }
 
+    @Transactional
+    public Consultant save(Consultant consultant){
+        return consultantRepository.save(consultant);
+    }
+
+    @Transactional
+    public void delete(Consultant consultant){
+        consultantRepository.delete(consultant);
+
+    }
+
+    public Optional<Consultant> findById(Long id){
+        return consultantRepository.findById(id);
+    }
+
+    public Consultant update(Long id, @Valid Consultant request){
+        Consultant consultant = consultantRepository.findById(id).orElseThrow(() -> new DataIntegrityViolationException("Consultor não existe"));
+
+        consultant.setEspecializacao(request.getEspecializacao());
+        //consultant.setContacts(request.getContacts()); retirar uma dúvida, para os contatos precisa ser atualizado?
+        consultant.setLinks(request.getLinks());
+        consultant.setSobre(request.getSobre());
+        consultant.setCpf(request.getCpf());
+        consultant.setEmail(request.getEmail());
+        consultant.setName(request.getName());
+        consultant.setProfiles(request.getProfiles());
+
+        return consultantRepository.save(consultant);
+    }
+
+    public Consultant creat(Long id, @Valid Consultant request){
+
+        return consultantRepository.save(request);
+    }
 
 }
