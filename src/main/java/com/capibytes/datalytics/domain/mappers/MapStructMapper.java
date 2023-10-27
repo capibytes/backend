@@ -23,20 +23,20 @@ public interface MapStructMapper {
     MapStructMapper INSTANCE = Mappers.getMapper(MapStructMapper.class);
 
 
-    List<ConsultantRequestDTO> consultantRequestDTOAllToConsultant(Consultant consultant);
+    List<ConsultantRequestDTO> consultantRequestDTOAllToConsultant(List<Consultant> consultant);
 
-    Consultant consultantToConsultantResponseDTO(ContactResponseDTO contactResponseDTO);
+    Consultant consultantToConsultantRequestDTO(ConsultantRequestDTO contactRequestDTO);
 
-    ConsultantRequestDTO consultantRequestDTOToConsultant(ConsultantRequestDTO consultant);
+    ConsultantRequestDTO consultantRequestDTOToConsultant(Consultant consultant);
 
-    List<CustomerRequestDTO> customerRequestDTOAllToCustomer(Customer customer);
+    List<CustomerRequestDTO> customerRequestDTOAllToCustomer(List<Customer> customer);
 
     Customer customerToCustomerResponseDTO(CustomerResponseDTO customerResponseDTO);
 
     CustomerRequestDTO customerRequestDTOToCustomer(Customer customer);
 
 
-    List<ContactRequestDTO> contactRequestDTOAllToContact(Contact contact);
+    List<ContactRequestDTO> contactRequestDTOAllToContact(List<Contact> contact);
 
     Contact contactToContactResponseDTO(ContactResponseDTO contactResponseDTO);
 
