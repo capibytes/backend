@@ -30,11 +30,6 @@ resource "aws_security_group" "ec2_sg" {
     protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]  # Allow all outbound traffic
   }
-
-  tags = {
-    Env = local.env
-    Equipe = local.team_name
-  }
 }
 
 resource "aws_instance" "cpb_ec2" {
@@ -44,10 +39,9 @@ resource "aws_instance" "cpb_ec2" {
   key_name               = "capibytes-cecilia"  # Specify your key pair name if you have one
   vpc_security_group_ids = [aws_security_group.ec2_sg.id]
   subnet_id              = aws_subnet.cpb_subnet1.id
+  iam_instance_profile = aws_iam_instance_profile.backend_ec2_profile.name
 
   tags = {
-    Env = local.env
-    Equipe = local.team_name
     Name = "capibytes_ec2"
   }
 }
