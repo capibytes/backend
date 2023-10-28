@@ -47,4 +47,6 @@ public interface MapStructMapper {
 
     FormRequestDTO formRequestDTOToForm(Form form);
 
+    List<FormRequestDTO> formRequestDTOAllToContact(List<Form> form);
+
 }
