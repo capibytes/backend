@@ -17,8 +17,6 @@ resource "aws_db_instance" "cpb_rds" {
   db_subnet_group_name   = aws_db_subnet_group.rds_subnet_group.name
 
   tags = {
-    Env = local.env
-    Equipe = local.team_name
     Name = "capibytes-db"
   }
 }
@@ -46,9 +44,4 @@ resource "aws_security_group" "rds_sg" {
 resource "aws_db_subnet_group" "rds_subnet_group" {
   name       = "capibytes_rds_subnet_group"
   subnet_ids = [aws_subnet.cpb_subnet1.id, aws_subnet.cpb_subnet2.id]
-
-  tags = {
-    Env = local.env
-    Equipe = local.team_name
-  }
 }

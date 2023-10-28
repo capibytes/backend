@@ -6,7 +6,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
-@EnableJpaRepositories(basePackages = "com.janfer.estoque.repositories")
+@EnableJpaRepositories(basePackages = "com.capibytes.datalytics.repositories")
 @ComponentScan(basePackages = "com.capibytes.datalytics.domain.mappers")
 public class DatalyticsApplication {
 
