@@ -1,0 +1,21 @@
+name: Deploy docker-compose
+
+on:
+  push:
+    branches:
+      - main
+jobs:
+ deploy:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Deploy no servidor usando SSH
+        uses: appleboy/ssh-action@v0.1.10
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.ACTIONS_USER }}
+          key: ${{ secrets.ACTIONS_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          script: |
+            cd ${{ secrets.DEPLOY_DIR }} 
+            git pull
